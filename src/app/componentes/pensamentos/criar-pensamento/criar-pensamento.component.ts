@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-pensamento',
@@ -14,14 +14,14 @@ export class CriarPensamentoComponent implements OnInit {
     modelo: '',
   };
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   criarPensamento() {
     alert('novo pensamento criado!');
   }
 
   cancelar() {
-    alert('criação de pensamento cancelado!');
+    this.router.navigateByUrl('/listar-pensamento');
   }
 
   ngOnInit(): void {}
