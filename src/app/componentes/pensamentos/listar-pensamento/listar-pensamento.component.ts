@@ -18,6 +18,12 @@ export class ListarPensamentoComponent implements OnInit {
       autoria: 'Compenente pai',
       modelo: 'modelo2',
     },
+    {
+      conteudo:
+        'Minha propriedade é decorada com @Input() Minha propriedade é decorada com @Input()Minha propriedade é decorada com @Input()Minha propriedade é decorada com @Input()Minha',
+      autoria: 'Compenente pai',
+      modelo: 'modelo1',
+    },
   ];
 
   constructor() {}
