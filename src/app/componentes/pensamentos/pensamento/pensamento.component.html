@@ -8,10 +8,13 @@
   />
   <p class="conteudo">{{ pensamento?.conteudo }}</p>
   <p class="autoria">
-    <span>{{ pensamento?.autoria }}</span>
+    <b>{{ pensamento?.autoria }}</b>
   </p>
   <div class="acoes">
-    <button class="botao-editar">
+    <button
+      class="botao-editar"
+      routerLink="/listar-pensamento/editar-pensamento/{{ pensamento?.id }}"
+    >
       <img
         src="../../../../assets/icone-editar.png"
         alt="Icone de edição do card"

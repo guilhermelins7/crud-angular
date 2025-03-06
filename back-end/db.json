@@ -1,22 +1,3 @@
 {
-  "pensamentos": [
-    {
-      "id": 1,
-      "conteudo": "Elemento id2: Está funcionando!",
-      "autoria": "Gui",
-      "modelo": "modelo2"
-    },
-    {
-      "id": 1,
-      "conteudo": "Elemento id3: Observar mudanças no Modelo",
-      "autoria": "Gui",
-      "modelo": "modelo3"
-    },
-    {
-      "conteudo": "Mais um pensamento",
-      "autoria": "GUilherme",
-      "modelo": "modelo3",
-      "id": 2
-    }
-  ]
+  "pensamentos": []
 }
