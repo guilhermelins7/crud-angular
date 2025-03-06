@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pensamento } from 'src/app/modelos/pensamento';
+import { PensamentoService } from 'src/app/servicos/pensamento.service';
 
 @Component({
   selector: 'app-listar-pensamento',
@@ -7,26 +8,17 @@ import { Pensamento } from 'src/app/modelos/pensamento';
   styleUrls: ['./listar-pensamento.component.css'],
 })
 export class ListarPensamentoComponent implements OnInit {
-  listaPensamentos: Pensamento[] = [
-    {
-      conteudo: 'Comunicação',
-      autoria: 'Compenente pai',
-      modelo: 'modelo3',
-    },
-    {
-      conteudo: 'Minha propriedade é decorada com @Input()',
-      autoria: 'Compenente pai',
-      modelo: 'modelo2',
-    },
-    {
-      conteudo:
-        'Minha propriedade é decorada com @Input() Minha propriedade é decorada com @Input()Minha propriedade é decorada com @Input()Minha propriedade é decorada com @Input()Minha',
-      autoria: 'Compenente pai',
-      modelo: 'modelo1',
-    },
-  ];
+  listaPensamentos: Pensamento[] = [];
 
-  constructor() {}
+  // Injetando serviço na classe como um atributo para uso dos métodos.
+  constructor(private pensamentoService: PensamentoService) {}
 
-  ngOnInit(): void {}
+  // Chamando lógica do CRUD no ngOnInit para ser executada assim que carregado:
+  ngOnInit(): void {
+    // chamando o READ:
+    // Notar que aqui é necessário a chamada do subscribe para receber atualizações do Observable:
+    this.pensamentoService.listar().subscribe((listaPensamentosObs) => {
+      this.listaPensamentos = listaPensamentosObs;
+    });
+  }
 }
